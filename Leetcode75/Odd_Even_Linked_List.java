@@ -17,42 +17,19 @@ class ListNode {
     }
 }
 
-public class Delete_the_Middle_Node_of_a_Linked_List {
-    public ListNode deleteMiddle(ListNode head) {
-
-        // if (head == null || head.next == null)
-        // return null;
-
-        // int count = 0;
-        // ListNode temp = head;
-        // while (temp != null) {
-        // count++;
-        // temp = temp.next;
-        // }
-
-        // int mid = count / 2;
-        // temp = head;
-        // for (int i = 0; i < mid - 1; i++) {
-        // temp = temp.next;
-        // }
-
-        // temp.next = temp.next.next;
-
-        // return head;
-
+public class Odd_Even_Linked_List {
+    public ListNode oddEvenList(ListNode head) {
         if (head == null || head.next == null)
             return null;
-
-        ListNode slow = head, fast = head, prev = null;
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            prev = slow;
-            slow = slow.next;
+        ListNode odd = head, even = head.next, evenHead = even;
+        while (even != null && even.next != null) {
+            odd.next = odd.next.next;
+            even.next = even.next.next;
+            odd = odd.next;
+            even = even.next;
         }
-
-        prev.next = slow.next;
+        odd.next = evenHead;
         return head;
-
     }
 
     public static void printList(ListNode head) {
@@ -66,8 +43,8 @@ public class Delete_the_Middle_Node_of_a_Linked_List {
     }
 
     public static void main(String[] args) {
-        Delete_the_Middle_Node_of_a_Linked_List solution = new Delete_the_Middle_Node_of_a_Linked_List();
-        int[] s = { 1, 3, 4, 7, 1, 2, 6 };
+        Odd_Even_Linked_List solution = new Odd_Even_Linked_List();
+        int[] s = { 2, 1, 3, 5, 6, 4, 7 };
         ListNode head = new ListNode(s[0]);
         ListNode temp = head;
         for (int i = 1; i < s.length; i++) {
@@ -78,10 +55,9 @@ public class Delete_the_Middle_Node_of_a_Linked_List {
         System.out.print("Before: ");
         printList(head);
 
-        ListNode result = solution.deleteMiddle(head);
+        ListNode result = solution.oddEvenList(head);
 
         System.out.print("After:  ");
         printList(result);
     }
-
 }
