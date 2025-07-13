@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class RecentCounter {
-    private Queue<Integer> queue;
+    public Queue<Integer> queue;
 
-    public RecentCounter() {
+    public void RecentCounter() {
         queue = new LinkedList<>();
     }
 
