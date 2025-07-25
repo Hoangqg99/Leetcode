@@ -6,8 +6,9 @@ import java.util.Queue;
 public class RecentCounter {
     public Queue<Integer> queue;
 
-    public void RecentCounter() {
+    public RecentCounter() {
         queue = new LinkedList<>();
+        return;
     }
 
     public int ping(int t) {

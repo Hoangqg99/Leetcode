@@ -35,9 +35,9 @@ public class Maximum_Level_Sum_of_a_Binary_Tree {
     }
 
     public int maxLevelSum(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
         if (root == null)
             return 0;
-        List<Integer> result = new ArrayList<>();
         collab(root, 0, result);
         int maxLevelSum = Integer.MIN_VALUE;
         int maxlevel = 0;
