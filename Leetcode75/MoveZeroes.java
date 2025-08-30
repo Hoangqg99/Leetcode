@@ -1,6 +1,7 @@
 package Leetcode75;
 
 public class MoveZeroes {
+    // power two pointer
     public void moveZeroes(int[] nums) {
         int left = 0;
         for (int right = 0; right < nums.length; right++) {

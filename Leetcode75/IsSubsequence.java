@@ -22,4 +22,5 @@ public class IsSubsequence {
         System.out.println("Is \"" + s + "\" a subsequence of \"" + t + "\": " +
                 result);
     }
+
 }
